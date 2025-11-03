@@ -5,11 +5,10 @@ if [[ -z $HOME ]]; then
 fi
 
 CONFIGURATION_PATH="$(cd -- $(dirname $BASH_SOURCE) && pwd)"
-echo "${BASH_SOURCE[0]}"
-echo "Config file: $CONFIGURATION_PATH"
+TARGET_PATH=$HOME/.config/nvim
+exec 2>> "$CONFIGURATION_PATH/installation.log"
 
 echo "Cloning configuration files"
-echo "$CONFIGURATION_PATH/*"
-mkdir $HOME./config/nvim -p 2>> installation.log
-ln -s "$CONFIGURATION_PATH/*" $HOME/.config/nvim 2>> installation.log
 
+mkdir -p $TARGET_PATH
+ln -s $CONFIGURATION_PATH/*.lua $TARGET_PATH
