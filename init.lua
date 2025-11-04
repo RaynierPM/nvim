@@ -2,7 +2,7 @@ vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, silent = true })
 vim.keymap.set('v', '<C-c>', '"+y', { remap = true, desc = "Copy on OS clipboard" })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { remap = true, desc = "Save file shorcut" })
 vim.keymap.set('n', '<C-S-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the current file system file selector" })
-
+vim.keymap.set('n', '<C-a>', 'ggv<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
 -- # general config
 vim.opt.number = true
 vim.opt.cursorline = true
