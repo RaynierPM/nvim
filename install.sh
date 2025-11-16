@@ -28,5 +28,3 @@ mkdir -p $TARGET_PATH
 rsync -a --exclude=".git*" --exclude="install.sh" ./ ~/.config/nvim/
 
 echo "Opening nvim..."
-sleep 1.5
-nvim

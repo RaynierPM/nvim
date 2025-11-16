@@ -1,12 +1,19 @@
 require("config.lazy")
 
-vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, silent = true })
+vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, silent = true, desc = "Command to comment text/code" })
+vim.keymap.set('v', '<C-_>', 'gcc', { remap = true, silent =  true, desc = "Command to comment text/code" })
 vim.keymap.set('v', '<C-c>', '"+y', { remap = true, desc = "Copy on OS clipboard" })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { remap = true, desc = "Save file shorcut" })
 
 vim.keymap.set('n', '<C-A-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the current file system file selector" })
 
 vim.keymap.set('n', '<C-a>', 'gg0v<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
+
+-- Tabs - Not working yet
+-- vim.keymap.set('n', '<C-t>', 'gt', { remap = true, desc = "Go to the next tab" })
+-- vim.keymap.set('n', '<C-T>', 'gT', { remap = true, desc = "Go to the previous tab" })
+-- vim.keymap.set('n', '<C-S-o>', ':tabnew<cr>', { remap = true, desc = "Create a new tab" })
+-- vim.keymap.set('n', '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
 
 -- # general config
 vim.opt.number = true
@@ -33,4 +40,5 @@ vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Telesco
 
 -- Lazy
 local lazy = require("lazy")
-vim.keymap.set('n', '<leader>ld', lazy.show, { desc = "Showing the lazy dashboard" })
+vim.keymap.set('n', '<leader>ls', lazy.show, { desc = "Showing the lazy dashboard" })
+
