@@ -26,5 +26,3 @@ echo "Cloning configuration files..."
 mkdir -p $TARGET_PATH
 # ln -s $CONFIGURATION_PATH/*.lua $TARGET_PATH
 rsync -a --exclude=".git*" --exclude="install.sh" ./ ~/.config/nvim/
-
-echo "Opening nvim..."

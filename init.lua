@@ -10,8 +10,8 @@ vim.keymap.set('n', '<C-A-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the 
 vim.keymap.set('n', '<C-a>', 'gg0v<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
 
 -- Tabs - Not working yet
--- vim.keymap.set('n', '<C-t>', 'gt', { remap = true, desc = "Go to the next tab" })
--- vim.keymap.set('n', '<C-T>', 'gT', { remap = true, desc = "Go to the previous tab" })
+vim.keymap.set('n', '<C-Right>', 'gt', { remap = true, desc = "Go to the next tab" })
+vim.keymap.set('n', '<C-Left>', 'gT', { remap = true, desc = "Go to the previous tab" })
 -- vim.keymap.set('n', '<C-S-o>', ':tabnew<cr>', { remap = true, desc = "Create a new tab" })
 -- vim.keymap.set('n', '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
 
