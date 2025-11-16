@@ -6,9 +6,9 @@ fi
 
 CONFIGURATION_PATH="$(cd -- $(dirname $BASH_SOURCE) && pwd)"
 TARGET_PATH=$HOME/.config/nvim
-exec 2>> "$CONFIGURATION_PATH/installation.log"
+# exec 2>> "$CONFIGURATION_PATH/installation.log"
 
-if [ -n $(ls $TARGET_PATH) ]; then
+if [ -d $TARGET_PATH ] && [ -n "$(ls $TARGET_PATH)" ]; then
   echo "There are files in your configuration"
   echo "Do you want to replace your configuration with this new config (Y/n):"
   read answer
@@ -18,10 +18,15 @@ if [ -n $(ls $TARGET_PATH) ]; then
     exit 1
   fi
 
-  rm -r "$TARGET_PATH/*"
+  rm -r "$TARGET_PATH"
 fi
 
 echo "Cloning configuration files..."
 
 mkdir -p $TARGET_PATH
-ln -s $CONFIGURATION_PATH/*.lua $TARGET_PATH
+# ln -s $CONFIGURATION_PATH/*.lua $TARGET_PATH
+rsync -a --exclude=".git*" --exclude="install.sh" ./ ~/.config/nvim/
+
+echo "Opening nvim..."
+sleep 1.5
+nvim
