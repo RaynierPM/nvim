@@ -18,7 +18,6 @@ vim.keymap.set('n', '<C-Left>', 'gT', { remap = true, desc = "Go to the previous
 -- # general config
 vim.opt.number = true
 vim.opt.cursorline = true
-vim.opt.relativenumber = true
 
 -- # Indentation
 vim.opt.expandtab = true
