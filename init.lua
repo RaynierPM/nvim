@@ -1,19 +1,18 @@
 require("config.lazy")
 
-vim.keymap.set('n', '<C-_>', 'gcc', { remap = true, silent = true, desc = "Command to comment text/code" })
-vim.keymap.set('v', '<C-_>', 'gcc', { remap = true, silent =  true, desc = "Command to comment text/code" })
+vim.keymap.set({'n', 'v'}, '<C-_>', 'gcc', { remap = true, silent = true, desc = "Command to comment text/code" })
 vim.keymap.set('v', '<C-c>', '"+y', { remap = true, desc = "Copy on OS clipboard" })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { remap = true, desc = "Save file shorcut" })
 
-vim.keymap.set('n', '<C-A-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the current file system file selector" })
+vim.keymap.set({'n', 'v'}, '<C-A-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the current file system file selector" })
 
-vim.keymap.set('n', '<C-a>', 'gg0v<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
+vim.keymap.set({'n', 'v'}, '<C-a>', 'gg0v<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
 
 -- Tabs - Not working yet
-vim.keymap.set('n', '<C-Right>', 'gt', { remap = true, desc = "Go to the next tab" })
-vim.keymap.set('n', '<C-Left>', 'gT', { remap = true, desc = "Go to the previous tab" })
--- vim.keymap.set('n', '<C-S-o>', ':tabnew<cr>', { remap = true, desc = "Create a new tab" })
--- vim.keymap.set('n', '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
+vim.keymap.set({'n', 'v', 'i'}, '<C-l>', 'gt', { remap = true, desc = "Go to the next tab" })
+vim.keymap.set({'n', 'v', 'i'}, '<C-h>', 'gT', { remap = true, desc = "Go to the previous tab" })
+vim.keymap.set({'n', 'v', 'i'}, '<C-t>', ':tabnew .<cr>', { remap = true, desc = "Create a new tab on current directory file system" })
+vim.keymap.set({'n', 'v', 'i'}, '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
 
 -- # general config
 vim.opt.number = true
