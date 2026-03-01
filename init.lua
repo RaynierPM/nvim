@@ -6,13 +6,13 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { remap = true, desc = "Save file shorcut
 
 vim.keymap.set({'n', 'v'}, '<C-A-o>', ':Ex $PWD<CR>', { remap = true, desc = "Open the current file system file selector" })
 
-vim.keymap.set({'n', 'v'}, '<C-a>', 'gg0v<S-g><S-$>', { remap = true, desc = "Select all te content on file" })
+vim.keymap.set({'n', 'v'}, '<C-a>', 'ggV<S-g>', { remap = true, desc = "Select all te content on file" })
 
 -- Tabs - Not working yet
 vim.keymap.set({'n', 'v', 'i'}, '<C-l>', 'gt', { remap = true, desc = "Go to the next tab" })
 vim.keymap.set({'n', 'v', 'i'}, '<C-h>', 'gT', { remap = true, desc = "Go to the previous tab" })
 vim.keymap.set({'n', 'v', 'i'}, '<C-t>', ':tabnew .<cr>', { remap = true, desc = "Create a new tab on current directory file system" })
-vim.keymap.set({'n', 'v', 'i'}, '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
+-- vim.keymap.set({'n', 'v', 'i'}, '<C-w>', ':tabclose<cr>', { remap = true, desc = "Close the current tab" })
 
 -- # general config
 vim.opt.number = true
